@@ -1,4 +1,4 @@
-# GraphQL Server with MongoDB BoilerPlate #
+# GraphQL Server with MongoDB boilerplate #
 
 This is a boilerplate to build a graphql server with graphql-yoga and mongoose ODM. 
 Main features:
