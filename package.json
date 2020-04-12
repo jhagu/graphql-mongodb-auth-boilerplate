@@ -1,0 +1,30 @@
+{
+  "name": "graphql-mongodb-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate to build GraphQL Server in Nodejs with GraphQL-yoga and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd -f config/development.env nodemon src/index.js --ext js,graphql --exec babel-node",
+    "lint" : "eslint ./src"
+  },
+  "author": "Juan Agu",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "graphql": "^15.0.0",
+    "graphql-shield": "^7.2.3",
+    "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2"
+  }
+}
