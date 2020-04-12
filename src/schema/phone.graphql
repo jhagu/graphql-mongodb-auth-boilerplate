@@ -1,0 +1,21 @@
+type Phone {
+  id: ID!
+  account_id: ID!
+  company: PhoneCompany
+  area_code: Int
+  number: Int
+}
+
+
+input CreatePhoneInput {
+  company: PhoneCompany!
+  area_code: Int!
+  number: Int!
+}
+
+enum PhoneCompany{
+  CLARO
+  MOVISTAR
+  TUENTI
+  PERSONAL
+}

@@ -1,0 +1,13 @@
+type AuthPayload {
+  access_token: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+enum Role {
+  ADMIN
+  USER
+}

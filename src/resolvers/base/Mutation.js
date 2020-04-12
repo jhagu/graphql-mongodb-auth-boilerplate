@@ -40,8 +40,8 @@ const Mutation = {
     }
   },
 
-  async updateAccount(_parent, args, { db, request }, _info) {
-    const authorization = getAuthorizationHeader(request);
+  async updateAccount(_parent, args, { db, req }, _info) {
+    const authorization = getAuthorizationHeader(req);
     const account_id = getAccountIdFromToken(authorization);
     const { data } = args;
     try {
@@ -52,9 +52,9 @@ const Mutation = {
     }
   },
 
-  async createAddress(_parent, args, { db, request }, _info) {
+  async createAddress(_parent, args, { db, req }, _info) {
 
-    const authorization = getAuthorizationHeader(request);
+    const authorization = getAuthorizationHeader(req);
     const account_id = getAccountIdFromToken(authorization);
 
     const { data } = args;
@@ -70,9 +70,9 @@ const Mutation = {
     }
   },
 
-  async createPhone(_parent, args, { db, request }, _info) {
+  async createPhone(_parent, args, { db, req }, _info) {
 
-    const authorization = getAuthorizationHeader(request);
+    const authorization = getAuthorizationHeader(req);
     const account_id = getAccountIdFromToken(authorization);
 
     const { data } = args;

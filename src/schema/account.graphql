@@ -1,0 +1,19 @@
+type  Account {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+  role: Role!
+}
+
+input CreateAccountInput {
+  name: String!
+  email: String!
+  password: String!
+  role: Role!
+}
+
+input UpdateAccountInput{
+  name: String
+  password: String
+}

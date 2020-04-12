@@ -1,18 +1,27 @@
-import { GraphQLServer } from 'graphql-yoga';
-import resolvers from './resolvers';
+import { ApolloServer } from 'apollo-server';
 import { getConnection } from '../database/db';
+import { importSchema } from 'graphql-import';
+import { applyMiddleware } from 'graphql-middleware';
+import { makeExecutableSchema } from 'graphql-tools';
 import { permissions } from './permissions'
+import resolvers from './resolvers';
 
 
-const server = new GraphQLServer({
-  typeDefs: "./src/schema/schema.graphql",
-  resolvers,
-  middlewares: [permissions],
-  context: async (request) => {
+const schema = applyMiddleware(
+  makeExecutableSchema({
+    typeDefs: importSchema('./src/schema/schema.graphql'),
+    resolvers,
+  }),
+  permissions
+)
+
+const server = new ApolloServer({
+  schema,
+  context: async ({ req }) => {
     const db = await getConnection();
     return {
       db,
-      request
+      req
     }
   }
 })

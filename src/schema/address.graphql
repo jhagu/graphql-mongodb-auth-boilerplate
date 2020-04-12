@@ -1,0 +1,19 @@
+type Address {
+  id: ID!
+  account_id: ID!
+  country: String
+  province: String
+  city: String
+  street: String
+  numeration: Int
+  postal_code: Int
+}
+
+input CreateAddressInput {
+  country: String!
+  province: String!
+  city: String!
+  street: String!
+  numeration: Int!
+  postal_code: Int!
+}

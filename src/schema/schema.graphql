@@ -1,86 +1,8 @@
-type  Account {
-  id: ID!
-  name: String!
-  email: String!
-  password: String!
-  role: Role!
-}
-
-type Profile {
-  account_id: ID!
-  name: String
-  email: String
-  address: Address
-  phones: [Phone]
-}
-
-type Phone {
-  id: ID!
-  account_id: ID!
-  company: PhoneCompany
-  area_code: Int
-  number: Int
-}
-
-type Address {
-  id: ID!
-  account_id: ID!
-  country: String
-  province: String
-  city: String
-  street: String
-  numeration: Int
-  postal_code: Int
-}
-
-type AuthPayload {
-  access_token: String!
-}
-
-input LoginInput {
-  email: String!
-  password: String!
-}
-
-input CreateAccountInput {
-  name: String!
-  email: String!
-  password: String!
-  role: Role!
-}
-
-input UpdateAccountInput{
-  name: String
-  password: String
-}
-
-input CreateAddressInput {
-  country: String!
-  province: String!
-  city: String!
-  street: String!
-  numeration: Int!
-  postal_code: Int!
-}
-
-
-input CreatePhoneInput {
-  company: PhoneCompany!
-  area_code: Int!
-  number: Int!
-}
-
-enum PhoneCompany{
-  CLARO
-  MOVISTAR
-  TUENTI
-  PERSONAL
-}
-
-enum Role {
-  ADMIN
-  USER
-}
+# import AuthPayload, LoginInput, Role from 'auth.graphql'
+# import Account, CreateAccountInput, UpdateAccountInput from 'account.graphql'
+# import Address, CreateAddressInput from 'address.graphql'
+# import Phone, CreatePhoneInput, PhoneCompany from 'phone.graphql'
+# import Profile from 'profile.graphql'
 
 type Query{
   accounts: [Account!]!
@@ -97,4 +19,3 @@ type Mutation {
   createAddress(data: CreateAddressInput!): Address!
   createPhone(data: CreatePhoneInput!): Phone!
 }
-

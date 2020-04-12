@@ -1,5 +1,5 @@
 import server from './server';
 
-server.start(({ endpoint: '/api/graphql', port: process.env.PORT || 4000 }), () => {
-  console.log(`GrahpQL server up`)
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
 });

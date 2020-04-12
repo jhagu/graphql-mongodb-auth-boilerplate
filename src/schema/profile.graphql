@@ -1,0 +1,7 @@
+type Profile {
+  account_id: ID!
+  name: String
+  email: String
+  address: Address
+  phones: [Phone]
+}

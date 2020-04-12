@@ -1,6 +1,6 @@
 # GraphQL Server with MongoDB Atlas boilerplate #
 
-This is a boilerplate to build a graphql server with graphql-yoga and mongoose ODM. 
+This is a boilerplate to build a graphql server with Apollo Server and mongoose ODM. 
 Main features:
 - Auth middleware implemented with graphql-shield
 - Support for serverless framework (coming soon)

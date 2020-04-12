@@ -3,8 +3,8 @@ import { getAuthorizationHeader, getAccountIdFromToken } from '../../utils';
 
 const Query = {
 
-  async myAccount(_parent, _args, { db, request }, _info) {
-    const authorization = getAuthorizationHeader(request);
+  async myAccount(_parent, _args, { db, req }, _info) {
+    const authorization = getAuthorizationHeader(req);
     const account_id = getAccountIdFromToken(authorization);
     try {
       const account = await Account(db).findById({ _id: account_id });
@@ -29,8 +29,8 @@ const Query = {
     }
   },
 
-  async myProfile(_parent, _args, { db, request }, _info) {
-    const authorization = getAuthorizationHeader(request);
+  async myProfile(_parent, _args, { db, req }, _info) {
+    const authorization = getAuthorizationHeader(req);
     const account_id = getAccountIdFromToken(authorization);
     try {
       let profile = {}
@@ -50,8 +50,8 @@ const Query = {
     }
   },
 
-  async myPhones(_parent, _args, { db, request }, _info) {
-    const authorization = getAuthorizationHeader(request);
+  async myPhones(_parent, _args, { db, req }, _info) {
+    const authorization = getAuthorizationHeader(req);
     const account_id = getAccountIdFromToken(authorization);
     try {
       const phones = await Phone(db).find({ account_id });
@@ -61,8 +61,8 @@ const Query = {
     }
   },
 
-  async myAddress(_parent, _args, { db, request }, _info) {
-    const authorization = getAuthorizationHeader(request);
+  async myAddress(_parent, _args, { db, req }, _info) {
+    const authorization = getAuthorizationHeader(req);
     const account_id = getAccountIdFromToken(authorization);
     try {
       const address = await Address(db).findOne({ account_id });
